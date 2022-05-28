@@ -13,7 +13,9 @@ public class Main {
         UI ui = new UI();
 
         //ui.start(deck, playerOne, playerTwo);
-        System.out.println(Rank.SIX.ordinal());
-        System.out.println(Rank.KING.ordinal());
+        //System.out.println(Rank.SIX.ordinal());
+        //System.out.println(Rank.KING.ordinal());
+        //System.out.println(deck.getCards().get(0).toString());
+
     }
 }

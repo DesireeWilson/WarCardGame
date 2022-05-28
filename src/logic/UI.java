@@ -20,10 +20,10 @@ public class UI {
     }
 
     void battle(PlayerHand player1, PlayerHand player2) {
-        if(player1.getCards().size() < 1 & player1.getCardsInPlay().size() < 1){
+        if(player1.outOfCards()){
             System.out.println("PlayerTwo Wins!!!!");
             gameOver = true;
-        } else if (player2.getCards().size() < 1 & player2.getCardsInPlay().size() < 1) {
+        } else if (player2.outOfCards()) {
             System.out.println("PlayerOne Wins!!!!");
             gameOver = true;
         } else {

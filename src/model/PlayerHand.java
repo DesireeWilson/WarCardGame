@@ -42,6 +42,10 @@ public class PlayerHand {
         return cardsInPlay;
     }
 
+    public boolean outOfCards() {
+        return this.getCards().size() == 0;
+    }
+
     @Override
     public String toString() {
         return name;

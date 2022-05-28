@@ -57,7 +57,7 @@ public class Card implements Comparable<Card>{
     }
 
     @Override
-    public int compareTo(Card o) {
-        return Integer.compare(this.rank.ordinal(), o.rank.ordinal());
+    public int compareTo(Card otherCard) {
+        return Integer.compare(this.rank.ordinal(), otherCard.rank.ordinal());
     }
 }
