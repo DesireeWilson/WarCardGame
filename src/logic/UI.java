@@ -29,14 +29,11 @@ public class UI {
         } else {
             player1.playCard();
             player2.playCard();
-            int lastIndex = player1.getCardsInPlay().size() - 1;
-            Card playerOneCard = player1.getCardsInPlay().get(lastIndex);
-            Card playerTwoCard = player2.getCardsInPlay().get(lastIndex);
-            System.out.println(player1 + ":" + playerOneCard);
-            System.out.println(player2 + ":" + playerTwoCard);
-            if (playerOneCard.compareTo(playerTwoCard) == 1) {
+            System.out.println(player1 + ": " + player1.retrieveCardInPlay());
+            System.out.println(player2 + ": " + player2.retrieveCardInPlay());
+            if (player1.retrieveCardInPlay().compareTo(player2.retrieveCardInPlay()) == 1) {
                 winnerTakeSpoils(player1, player2);
-            } else if(playerOneCard.compareTo(playerTwoCard) == -1){
+            } else if(player1.retrieveCardInPlay().compareTo(player2.retrieveCardInPlay()) == -1){
                 winnerTakeSpoils(player2, player1);
             } else {
                 declareWar(player1, player2);
@@ -56,19 +53,18 @@ public class UI {
                 player1.playCard();
                 player2.playCard();
             }
-            int lastIndex = player1.getCardsInPlay().size();
             battle(player1, player2);
         }
     }
 
     void winnerTakeSpoils(PlayerHand winner, PlayerHand loser) {
         System.out.println(winner + " won that match!");
-        ArrayList<Card> winnersCards = new ArrayList<>();
-        winnersCards.addAll(winner.getCardsInPlay());
-        winnersCards.addAll(loser.getCardsInPlay());
-        winner.receiveCards(winnersCards);
+        ArrayList<Card> allCardsInPlay = new ArrayList<>();
+        allCardsInPlay.addAll(winner.getCardsInPlay());
+        allCardsInPlay.addAll(loser.getCardsInPlay());
+        winner.receiveCards(allCardsInPlay);
         winner.clearCardsInPlay();
         loser.clearCardsInPlay();
-        winnersCards = null;
+        allCardsInPlay = null;
     }
 }

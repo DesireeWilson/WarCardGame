@@ -14,9 +14,7 @@ public class PlayerHand {
     }
 
     public void receiveCards(ArrayList<Card> cards) {
-        for (Card card : cards) {
-            this.cards.add(card);
-        }
+            this.cards.addAll(cards);
     }
 
     public void receiveCards(Card card) {
@@ -34,6 +32,11 @@ public class PlayerHand {
         return card;
     }
 
+    public Card retrieveCardInPlay() {
+        int lastIndex = this.getCardsInPlay().size() - 1;
+        return this.getCardsInPlay().get(lastIndex);
+    }
+
     public void clearCardsInPlay() {
         cardsInPlay.clear();
     }
@@ -44,6 +47,10 @@ public class PlayerHand {
 
     public boolean outOfCards() {
         return this.getCards().size() == 0;
+    }
+
+    public String getName() {
+        return this.name;
     }
 
     @Override

@@ -13,7 +13,7 @@ public class Card implements Comparable<Card>{
     Suit assignSuit(int num) {
         return (num <= 12 && num >= 0 ) ? Suit.CLUB
                 : (num <= 25 && num >= 13) ? Suit.DIAMOND
-                : (num <=38 && num >= 26) ? Suit.HEART
+                : (num <= 38 && num >= 26) ? Suit.HEART
                 : Suit.SPADE;
     }
 
