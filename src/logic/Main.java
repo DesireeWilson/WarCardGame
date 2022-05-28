@@ -20,7 +20,5 @@ public class Main {
         //deck.shuffleDeck();
         //System.out.println(deck);
         gameLogic.start(deck, playerOne, playerTwo, scanner);
-
-
     }
 }
