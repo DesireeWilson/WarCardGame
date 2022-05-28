@@ -44,6 +44,9 @@ public class PlayerHand {
     public ArrayList<Card> getCardsInPlay() {
         return cardsInPlay;
     }
+    public ArrayList<Card> getCardsInHand() {
+        return cards;
+    }
 
     public boolean outOfCards() {
         return this.getCards().size() == 0;
@@ -55,6 +58,14 @@ public class PlayerHand {
 
     @Override
     public String toString() {
-        return name;
+        StringBuilder output = new StringBuilder(this.getName());
+        output.append(" -- Number of cards: ");
+        output.append(this.cards.size());
+        output.append("\n");
+        for (int i = 0; i < this.cards.size() - 1; i++) {
+            output.append(" ").append(this.cards.get(i).toString()).append(";");
+        }
+        output.append(" ").append(this.cards.get(this.cards.size()-1));
+        return output.toString();
     }
 }

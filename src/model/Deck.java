@@ -3,6 +3,7 @@ package model;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 public class Deck {
     private ArrayList<Card> cards = new ArrayList<>(52);
@@ -60,4 +61,10 @@ public class Deck {
         }
     }
 
+    @Override
+    public String toString() {
+        return cards.stream()
+                    .map(x -> x.toString())
+                    .collect(Collectors.joining("\n"));
+    }
 }
